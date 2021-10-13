@@ -133,6 +133,19 @@ func TestContextCancel(t *testing.T) {
 	assert.Equal(t, 0, ttl.Len())
 }
 
+func TestClear(t *testing.T) {
+	ctx, cancel := context.WithCancel(context.Background())
+	defer cancel()
+	ttl := New(time.Second * 1)
+	keys := generateTestSet(1000)
+	for _, k := range keys {
+		ttl.Put(ctx, k, nil)
+	}
+	assert.Equal(t, 1000, ttl.Len())
+	ttl.Clear()
+	assert.Equal(t, 0, ttl.Len())
+}
+
 func BenchmarkGet(b *testing.B) {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
