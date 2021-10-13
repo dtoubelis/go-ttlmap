@@ -102,7 +102,7 @@ func (t *TTLMap) TestAndPut(ctx context.Context, key string, val interface{}) bo
 	return t.TestAndPutWithTTL(ctx, key, val, t.ttl)
 }
 
-// TestAndPut inserts a new value with a specified key and TTL into the map only if none exists.
+// TestAndPutWithTTL inserts a new value with a specified key and TTL into the map only if none exists.
 // Otherwise, it does nothing and returns `false`.
 func (t *TTLMap) TestAndPutWithTTL(ctx context.Context, key string, val interface{}, ttl time.Duration) bool {
 	t.Lock()
