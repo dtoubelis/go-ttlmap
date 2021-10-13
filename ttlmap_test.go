@@ -94,7 +94,7 @@ func TestPutWithTTL(t *testing.T) {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 	ttl := New(time.Second * 1)
-	keys := generateTestSet(10000)
+	keys := generateTestSet(1000)
 	for i, k := range keys {
 		if i%2 == 0 {
 			ttl.Put(ctx, k, 0)
@@ -102,9 +102,9 @@ func TestPutWithTTL(t *testing.T) {
 			ttl.PutWithTTL(ctx, k, 1, time.Second*2)
 		}
 	}
-	assert.Equal(t, 10000, ttl.Len())
+	assert.Equal(t, 1000, ttl.Len())
 	time.Sleep(time.Millisecond * 1100)
-	assert.Equal(t, 5000, ttl.Len())
+	assert.Equal(t, 500, ttl.Len())
 	time.Sleep(time.Millisecond * 1100)
 	assert.Equal(t, 0, ttl.Len())
 }

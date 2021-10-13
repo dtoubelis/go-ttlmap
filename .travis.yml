@@ -32,10 +32,12 @@ jobs:
     - name: "test_1.11"
       << : *test
       go: "1.11"
+      env: GO111MODULE=on
 
     - name: "test_1.12"
       << : *test
       go: "1.12"
+      env: GO111MODULE=on
 
     - name: "test_1.13"
       << : *test
