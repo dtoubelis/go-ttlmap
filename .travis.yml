@@ -19,7 +19,7 @@ jobs:
 
     - name: "lint"
       << : *smoke
-      go: "1.14"
+      go: "1.15"
       install:
         - go get -u github.com/golangci/golangci-lint/cmd/golangci-lint@v1.42.1
       script: make lint
@@ -46,7 +46,7 @@ jobs:
       go: "1.14"
 
     - name: "coverage"
-      << : *test2
+      << : *test
       go: "1.14"
       script:
         - make coverage
