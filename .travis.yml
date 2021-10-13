@@ -45,9 +45,13 @@ jobs:
       << : *test
       go: "1.14"
 
+    - name: "test_1.15"
+      << : *test
+      go: "1.15"
+
     - name: "coverage"
       << : *test
-      go: "1.14"
+      go: "1.15"
       script:
         - make coverage
         - bash <(curl -s https://codecov.io/bash)
