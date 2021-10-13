@@ -46,7 +46,7 @@ func New(ttl time.Duration) *TTLMap {
 	return &x
 }
 
-func (m *TTLMap) delayedRemove(ctx context.Context, key string, itemRef *item, ttl time.Duration) {
+func (t *TTLMap) delayedRemove(ctx context.Context, key string, itemRef *item, ttl time.Duration) {
 	// calculate random delay within 0-100ms range to reduce probability of collisions
 	dly := time.Microsecond * time.Duration(rand.Intn(100*1000))
 	// wait for an event
@@ -56,11 +56,11 @@ func (m *TTLMap) delayedRemove(ctx context.Context, key string, itemRef *item, t
 	case <-time.After(ttl + dly):
 		break
 	}
-	m.Lock()
-	defer m.Unlock()
+	t.Lock()
+	defer t.Unlock()
 	// check for itemRef before deletion to work around a possible race condition
-	if v, ok := m.m[key]; ok && v == itemRef {
-		delete(m.m, key)
+	if v, ok := t.m[key]; ok && v == itemRef {
+		delete(t.m, key)
 	}
 }
 
