@@ -25,7 +25,6 @@ entries is added to the map in a rapid succession.
 A similar condition may occur on context cancellation but impact of it is
 rather negligeable.
 
-
 ## ToDo
 
 - Provide code examples
