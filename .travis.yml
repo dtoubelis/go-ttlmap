@@ -29,20 +29,6 @@ jobs:
       go: "1.14"
       script: make vet
       
-    - name: "test_1.11"
-      << : *test
-      go: "1.11"
-      env: GO111MODULE=on
-
-    - name: "test_1.12"
-      << : *test
-      go: "1.12"
-      env: GO111MODULE=on
-
-    - name: "test_1.13"
-      << : *test
-      go: "1.13"
-
     - name: "test_1.14"
       << : *test
       go: "1.14"
