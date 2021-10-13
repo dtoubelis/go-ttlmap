@@ -1,6 +1,6 @@
 # go-ttlmap
 
-[![Build Status](https://travis-ci.org/dtoubelis/go-ttlmap.svg?branch=master)](https://travis-ci.org/dtoubelis/go-ttlmap)
+[![Build Status](https://app.travis-ci.com/dtoubelis/go-ttlmap.svg?branch=master)](https://app.travis-ci.com/github/dtoubelis/go-ttlmap)
 [![codecov](https://codecov.io/gh/dtoubelis/go-ttlmap/branch/master/graph/badge.svg)](https://codecov.io/gh/dtoubelis/go-ttlmap)
 [![GoReport](https://goreportcard.com/badge/github.com/dtoubelis/go-ttlmap)](https://goreportcard.com/badge/github.com/dtoubelis/go-ttlmap)
 [![GoDoc](https://godoc.org/github.com/dtoubelis/go-ttlmap?status.svg)](https://godoc.org/github.com/dtoubelis/go-ttlmap)
