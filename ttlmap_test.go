@@ -114,9 +114,9 @@ func TestPutWithTTL(t *testing.T) {
 		}
 	}
 	assert.Equal(t, 1000, ttl.Len())
-	time.Sleep(time.Millisecond * 1100)
+	time.Sleep(time.Millisecond * 1200)
 	assert.Equal(t, 500, ttl.Len())
-	time.Sleep(time.Millisecond * 1100)
+	time.Sleep(time.Millisecond * 1200)
 	assert.Equal(t, 0, ttl.Len())
 }
 
@@ -129,7 +129,7 @@ func TestContextCancel(t *testing.T) {
 	}
 	assert.Equal(t, 1000, ttl.Len())
 	cancel()
-	time.Sleep(time.Millisecond * 100)
+	time.Sleep(time.Millisecond * 200)
 	assert.Equal(t, 0, ttl.Len())
 }
 

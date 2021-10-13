@@ -27,12 +27,14 @@ type item struct {
 	val    interface{}
 }
 
+// TTLMap is obscure context
 type TTLMap struct {
 	sync.RWMutex
 	m   map[string]*item
 	ttl time.Duration
 }
 
+// New creates a new TTLMap with a specified default TTL
 func New(ttl time.Duration) *TTLMap {
 	if ttl <= 0 {
 		panic("invalid TTL")
