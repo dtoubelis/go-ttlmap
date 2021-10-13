@@ -6,7 +6,7 @@
 [![GoDoc](https://godoc.org/github.com/dtoubelis/go-ttlmap?status.svg)](https://godoc.org/github.com/dtoubelis/go-ttlmap)
 ![GitHub](https://img.shields.io/github/license/dtoubelis/go-ttlmap)
 
-Go TTL Map is a concurentt map with entries expirimng after a specified interfal. This package
+Go TTL Map is a concurent map with entries expiring after a specified interval. This package
 requires `go1.14` or newer.
 
 ## ToDo
