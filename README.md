@@ -25,6 +25,22 @@ of entries is added to the map in a rapid succession.
 A similar condition may occur on context cancellation but impact of it is
 rather negligeable.
 
+## Benchmarks
+
+```
+goos: linux
+goarch: amd64
+pkg: github.com/dtoubelis/go-ttlmap
+cpu: AMD Ryzen 9 3900X 12-Core Processor            
+BenchmarkGet
+BenchmarkGet-8           	 1000000	      1440 ns/op	       0 B/op	       0 allocs/op
+BenchmarkPut
+BenchmarkPut-8           	  518889	      4175 ns/op	     889 B/op	      10 allocs/op
+BenchmarkCheckAndPut
+BenchmarkCheckAndPut-8   	  524019	      4077 ns/op	     867 B/op	      10 allocs/op
+PASS
+```
+
 ## ToDo
 
 - Provide code examples
